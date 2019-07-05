@@ -1,0 +1,3 @@
+entity seleciona is
+port(entrada: in std_logic_vector(25 downto 0);
+		saida: out bit)

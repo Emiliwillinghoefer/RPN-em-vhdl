@@ -1,0 +1,113 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+*/
+(header "symbol" (version "1.1"))
+(symbol
+	(rect 16 16 176 192)
+	(text "dec_to_bin" (rect 5 0 48 12)(font "Arial" ))
+	(text "inst" (rect 8 160 20 172)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "dec3[31..0]" (rect 0 0 42 12)(font "Arial" ))
+		(text "dec3[31..0]" (rect 21 27 63 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32)(line_width 3))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "dec2[31..0]" (rect 0 0 42 12)(font "Arial" ))
+		(text "dec2[31..0]" (rect 21 43 63 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48)(line_width 3))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "dec1[31..0]" (rect 0 0 41 12)(font "Arial" ))
+		(text "dec1[31..0]" (rect 21 59 62 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64)(line_width 3))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "dec0[31..0]" (rect 0 0 42 12)(font "Arial" ))
+		(text "dec0[31..0]" (rect 21 75 63 87)(font "Arial" ))
+		(line (pt 0 80)(pt 16 80)(line_width 3))
+	)
+	(port
+		(pt 160 32)
+		(output)
+		(text "bin1" (rect 0 0 14 12)(font "Arial" ))
+		(text "bin1" (rect 125 27 139 39)(font "Arial" ))
+		(line (pt 160 32)(pt 144 32)(line_width 1))
+	)
+	(port
+		(pt 160 48)
+		(output)
+		(text "bin2" (rect 0 0 15 12)(font "Arial" ))
+		(text "bin2" (rect 124 43 139 55)(font "Arial" ))
+		(line (pt 160 48)(pt 144 48)(line_width 1))
+	)
+	(port
+		(pt 160 64)
+		(output)
+		(text "bin3" (rect 0 0 15 12)(font "Arial" ))
+		(text "bin3" (rect 124 59 139 71)(font "Arial" ))
+		(line (pt 160 64)(pt 144 64)(line_width 1))
+	)
+	(port
+		(pt 160 80)
+		(output)
+		(text "bin4" (rect 0 0 16 12)(font "Arial" ))
+		(text "bin4" (rect 123 75 139 87)(font "Arial" ))
+		(line (pt 160 80)(pt 144 80)(line_width 1))
+	)
+	(port
+		(pt 160 96)
+		(output)
+		(text "bin5" (rect 0 0 15 12)(font "Arial" ))
+		(text "bin5" (rect 124 91 139 103)(font "Arial" ))
+		(line (pt 160 96)(pt 144 96)(line_width 1))
+	)
+	(port
+		(pt 160 112)
+		(output)
+		(text "bin6" (rect 0 0 15 12)(font "Arial" ))
+		(text "bin6" (rect 124 107 139 119)(font "Arial" ))
+		(line (pt 160 112)(pt 144 112)(line_width 1))
+	)
+	(port
+		(pt 160 128)
+		(output)
+		(text "bin7" (rect 0 0 15 12)(font "Arial" ))
+		(text "bin7" (rect 124 123 139 135)(font "Arial" ))
+		(line (pt 160 128)(pt 144 128)(line_width 1))
+	)
+	(port
+		(pt 160 144)
+		(output)
+		(text "bin8" (rect 0 0 15 12)(font "Arial" ))
+		(text "bin8" (rect 124 139 139 151)(font "Arial" ))
+		(line (pt 160 144)(pt 144 144)(line_width 1))
+	)
+	(drawing
+		(rectangle (rect 16 16 144 160)(line_width 1))
+	)
+)

@@ -1,0 +1,67 @@
+library IEEE;
+use IEEE.std_logic_1164.all;
+
+entity divisor is 
+port(
+	a0,a1,a2,a3,a4,a5,a6,a7 = in std_logic;
+    s0,s1,s2,s3,s4,s5,s6,s7 = out std_logic );
+    
+end divisor;
+
+architecture divide of divisor is
+
+	signal 	result0,result1,result2,result3,result4,result5,result6,result7,result8,result9: integer;
+    signal sa: integer;
+    
+begin
+
+	process(a0,a1,a2,a3,a4,a5,a6,a7);    
+    variable constante: integer;
+    variable result_div: integer;
+
+    ---define qual vai ser o valor constante que passa dividindo 
+    constante := 2;
+    
+    --- faz a conversão de binario para decimal     
+    if a0 = 1 then result0 <= 1 else result0 <= 0 end if;
+    if a1 = 1 then result1 <= 2 else result1<= 0 end if;
+    if a2 = 1 then result2 <= 4 else result2<= 0 end if;
+    if a3 = 1 then result3 <= 8 else result3<= 0 end if;
+    if a4 == 1 then result4 <= 16 else result4<= 0 end if;
+    if a5 == 1 then result5 <= 32 else result5<= 0 end if;
+    if a6 == 1 then result6 <= 64 else result6<= 0 end if;
+    if a7 == 1 then result7 <= 128 else result7<= 0 end if;
+
+     sa <= (result0+result1+result2+result3+result4+result5+result6+result7+result8+result9);
+
+     result_div := (sa/constante); --resultado da divisao
+    
+    signal temp; std_logic_vector(7 downto 0); -- sinal para pegar os bits temporarios
+    variable vari: integer
+    vari := 50;
+    
+    for i in 0 to vari loop
+    
+    	if (result_div mod 2) = 1 then 
+        	temp(i) <= 1;
+        	break;
+        
+        end if (result_div mod 2) = 0 then
+        	temp(i) <= 0;
+            break;
+        else
+        	temp(i) = result_div mod 2;
+        	result_div = result_div/2;
+        
+        i <= i+1;
+        
+    end loop;
+    
+    s0 <= temp(7);
+    s1 <= temp(6);
+    s2 <= temp(5);
+    s3 <= temp(4);
+    s4 <= temp(3);
+    s5 <= temp(2);
+    s6 <= temp(1);
+    s7 <= temp(0);

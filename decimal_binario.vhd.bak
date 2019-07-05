@@ -1,0 +1,49 @@
+library IEEE;
+use IEEE.std_logic_1164.all;
+
+
+entity dec_to_bin is
+
+	port (
+    	dec3, dec2, dec1, dec0 : integer range 0 to 9;
+        bin : out std_logic_vector(7 downto 0)
+    );
+
+end entity;
+
+
+architecture arc78 of dec_to_bin is	
+
+begin
+
+	process (dec3, dec2, dec1, dec0)
+    	 
+        variable mods : std_logic_vector(7 downto 0);
+        variable dec_aux : integer range 0 to 1023;
+        variable i : integer range 0 to 7;
+        
+    begin
+    
+		mods := "00000000";
+		dec_aux := (dec3 * 1000) + (dec2 * 100) + (dec1 * 10) + dec0;
+        i := 0;
+        
+        while (dec_aux >= 2) loop
+            
+			if (dec_aux mod 2 = 1) then
+            	mods(i) := '1';
+            end if;
+                        
+            i := i + 1;
+            dec_aux := dec_aux / 2;
+		end loop;
+         
+        if (dec_aux = 1) then
+         	mods(i) := '1';
+        end if;
+         
+        bin <= mods;
+    
+    end process;
+
+end architecture;

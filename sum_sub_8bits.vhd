@@ -1,0 +1,66 @@
+library ieee;
+use ieee.std_logic_1164.all;
+entity sum_sub_8bits is
+    port(
+        in_b0, in_b1,in_b2, in_b3,in_b4, in_b5,in_b6, in_b7: in std_logic;
+		  
+      control   : in std_logic;
+		saida0,saida1,saida2,saida3,saida4,saida5,saida6,saida7,saida8,saida9 : out std_logic;
+      cout : out std_logic
+    );
+end entity;
+
+architecture struct of sum_sub_8bits is
+
+	 signal result : std_logic_vector(9 downto 0);
+    signal internal_c,internal_c1,internal_c2,internal_c3,internal_c4,internal_c5,internal_c6,internal_c7: std_logic;
+    signal internal_b,internal_b1,internal_b2,internal_b3,internal_b4,internal_b5,internal_b6,internal_b7: std_logic;
+    signal in_a, in_b,in_c, in_d,in_e, in_f,in_g, in_h: std_logic;
+	 
+	 
+	 begin
+    in_a<='0';
+	 in_b<='0';
+	 in_c<='0';
+	 in_d<='1';
+	 in_e<='0';
+	 in_f<='1';
+	 in_g<='0';
+	 in_h<='0';
+	 
+	 
+	 
+	 
+    internal_b <=   in_b0 xor control;
+    internal_b1 <=  in_b1 xor control;    
+    internal_b2 <=  in_b2 xor control;
+    internal_b3 <=  in_b3 xor control;
+	 internal_b4 <=  in_b4 xor control;
+    internal_b5 <=  in_b5 xor control;    
+    internal_b6 <=  in_b6 xor control;
+    internal_b7 <=  in_b7 xor control;
+    
+    SC0: entity work.somadorC port map(a => in_a, b => internal_b, cin => control,    s => result(0), cout => internal_c);
+    SC1: entity work.somadorC port map(a => in_b, b => internal_b1, cin => internal_c, s => result(1), cout => internal_c1);
+    SC2: entity work.somadorC port map(a => in_c, b => internal_b2, cin => internal_c1, s => result(2), cout => internal_c2);
+    SC3: entity work.somadorC port map(a => in_d, b => internal_b3, cin => internal_c2, s => result(3), cout => internal_c3);
+	 SC4: entity work.somadorC port map(a => in_e, b => internal_b4, cin => internal_c3, s => result(4), cout => internal_c4);
+    SC5: entity work.somadorC port map(a => in_f, b => internal_b5, cin => internal_c4, s => result(5), cout => internal_c5);
+    SC6: entity work.somadorC port map(a => in_g, b => internal_b6, cin => internal_c5, s => result(6), cout => internal_c6);
+    SC7: entity work.somadorC port map(a => in_h, b => internal_b7, cin => internal_c6, s => result(7), cout => internal_c7);
+    cout <= internal_c7;
+	 
+	 saida0 <=  result(0);
+    saida1 <=  result(1);    
+    saida2 <=  result(2);
+    saida3 <=  result(3);
+	 saida4 <=  result(4);
+    saida5 <=  result(5);    
+    saida6 <=  result(6);
+    saida7 <=  result(7);
+	 saida8 <= '0';  
+	 saida9 <= '0';  
+	 
+    
+	 
+end architecture;
